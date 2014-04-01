@@ -19,6 +19,7 @@ class CadastrosController < ApplicationController
 
   # GET /cadastros/1/edit
   def edit
+    render text: 'Acesso Negado' unless logado?
   end
 
   # POST /cadastros
@@ -72,3 +73,7 @@ class CadastrosController < ApplicationController
       params.require(:cadastro).permit(:nome, :email, :password_digest, :endereco, :admin, :data_nasc)
     end
 end
+
+    def logado?
+        false
+      end
