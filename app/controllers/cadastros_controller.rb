@@ -10,6 +10,7 @@ class CadastrosController < ApplicationController
   # GET /cadastros/1
   # GET /cadastros/1.json
   def show
+    render text: 'Acesso Negado' unless logado?
   end
 
   # GET /cadastros/new
@@ -72,7 +73,7 @@ class CadastrosController < ApplicationController
     def cadastro_params
       params.require(:cadastro).permit(:nome, :email, :password_digest, :endereco, :admin, :data_nasc)
     end
-  
+
   def logado?
     false
   end
