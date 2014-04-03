@@ -11,7 +11,18 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140401202033) do
+ActiveRecord::Schema.define(version: 20140401203136) do
+
+  create_table "cadastros", force: true do |t|
+    t.string   "nome"
+    t.string   "email"
+    t.string   "password_digest"
+    t.text     "endereco"
+    t.boolean  "admin"
+    t.date     "data_nasc"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
 
   create_table "tarefas", force: true do |t|
     t.string   "titulo"
